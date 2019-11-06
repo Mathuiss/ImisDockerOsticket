@@ -1,14 +1,14 @@
 version: '3'
 services:
-    dev-osticket:
+    mysql:
+        image: mysql:5
+    osticket:
         build:
             context: .
             dockerfile: ./Dockerfile
-        image: dev-osticket-image
+        image: osticket-image
         container_name: osticket
         environment:
-            XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1
-            MYSQL_HOST: 172.17.0.1
             MYSQL_USER: imis_admin
             MYSQL_PASSWORD: imis_admin
             MYSQL_DATABASE: ost_db
@@ -17,8 +17,8 @@ services:
             - '800:80'
         volumes:
             - type: bind
-              source: /var/lib/docker/volumes/osticket-upload-volume/_data
-              target: /data/upload/
+              source: "/var/lib/docker/volumes/osticket-upload-volume/_data"
+              target: "/data/upload/"
             - type: bind
-              source: /var/lib/docker/volumes/osticket-upload-volume/_data
-              target: /var/log/nginx
+              source: "/var/lib/docker/volumes/osticket-upload-volume/_data"
+              target: "/var/log/nginx"
