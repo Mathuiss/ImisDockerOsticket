@@ -4,8 +4,9 @@ docker-osticket
 When running the run.sh script there is a chance the mysql container crashes.
 Because of this the script periodically checks is the container is still running.
 If the container crashes and causes the script to crash, run:
-`docker rm -f osticket-db`
-`docker run -itd --name osticket-db -e MYSQL_ROOT_PASSWORD=iMIS2008! -e MYSQL_USER=imis_admin -e MYSQL_PASSWORD=imis_admin -e MYSQL_DATABASE=ost_db mysql:5`
+
+```docker rm -f osticket-db
+docker run -itd --name osticket-db -e MYSQL_ROOT_PASSWORD=iMIS2008! -e MYSQL_USER=imis_admin -e MYSQL_PASSWORD=imis_admin -e MYSQL_DATABASE=ost_db mysql:5```
 
 # Introduction
 
