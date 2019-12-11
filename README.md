@@ -2,8 +2,9 @@ docker-osticket
 ===============
 # How to run
 1. Make sure a mariaDB server/mysql server is running.
-2. If you're not using the imis account to login to the database, change the run.sh to use your account.
-3. ```./run.sh```
+2. Make sure the bind_address of mysqld accepts connections outside of localhost
+3. If you're not using the imis account to login to the database, change the run.sh to use your account.
+4. ```./run.sh```
 
 
 # Introduction
