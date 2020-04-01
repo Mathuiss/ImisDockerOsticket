@@ -1,5 +1,6 @@
+name=$1
 
-docker stop osticket
-docker rmi osticket-image
-rm -rf /var/lib/docker/volumes/osticket-upload-volume/_data/*
-docker build -t osticket-image .
+docker stop ${name}-osticket
+docker rmi ${name}-osticket-image
+rm -rf /var/lib/docker/volumes/${name}-ost-upload/_data/*
+docker build -t ${name}-osticket-image .
